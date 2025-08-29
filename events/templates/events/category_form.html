@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Form</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-inter">
+    <div class="container mx-auto mt-10">
+        <h1 class="text-2xl font-bold mb-5">Category Form</h1>
+        <form method="POST" action="{% url 'category_create' %}" class="bg-white p-6 rounded shadow-md card">
+            {% csrf_token %}
+            <div class="mb-4 form-group">
+                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500">
+            </div>
+            <div class="mb-4 form-group">
+                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea name="description" id="description" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500 h-24"></textarea>
+            </div>
+            <div class="flex items-center justify-between">
+                <button type="submit" class="button">Save Category</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

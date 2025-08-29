@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Dashboard</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-inter">
+    {% include 'base.html' %}
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold mb-6">Organizer Dashboard</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <div class="bg-white p-4 rounded shadow card">
+                <h2 class="text-xl font-semibold">Total Participants</h2>
+                <p class="text-2xl">{{ total_participants }}</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow card">
+                <h2 class="text-xl font-semibold">Total Events</h2>
+                <p class="text-2xl">{{ total_events }}</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow card">
+                <h2 class="text-xl font-semibold">Upcoming Events</h2>
+                <p class="text-2xl">{{ upcoming_events }}</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow card">
+                <h2 class="text-xl font-semibold">Past Events</h2>
+                <p class="text-2xl">{{ past_events }}</p>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4">Today's Events</h2>
+        <ul class="bg-white rounded shadow">
+            {% for event in todays_events %}
+                <li class="p-4 border-b">
+                    <h3 class="text-xl font-semibold">{{ event.name }}</h3>
+                    <p>{{ event.date }} at {{ event.time }}</p>
+                </li>
+            {% empty %}
+                <li class="p-4">No events scheduled for today.</li>
+            {% endfor %}
+        </ul>
+
+        <div id="interactive-stats" class="mt-6">
+            <h2 class="text-2xl font-bold mb-4">Interactive Stats</h2>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded button" onclick="updateStats('total')">Total Events</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded button" onclick="updateStats('upcoming')">Upcoming Events</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded button" onclick="updateStats('past')">Past Events</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>

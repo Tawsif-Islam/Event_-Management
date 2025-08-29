@@ -1,0 +1,35 @@
+{
+  "name": "event-management-system",
+  "version": "1.0.0",
+  "description": "A fully functional Event Management System built with Django and Tailwind CSS.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss build static/css/styles.css -o static/css/output.css",
+    "watch": "tailwindcss build static/css/styles.css -o static/css/output.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [],
+  "dependencies": {
+    "browserslist": "^4.25.4",
+    "caniuse-lite": "^1.0.30001737",
+    "electron-to-chromium": "^1.5.211",
+    "escalade": "^3.2.0",
+    "fraction.js": "^4.3.7",
+    "nanoid": "^3.3.11",
+    "node-releases": "^2.0.19",
+    "normalize-range": "^0.1.2",
+    "picocolors": "^1.1.1",
+    "postcss-value-parser": "^4.2.0",
+    "source-map-js": "^1.2.1",
+    "update-browserslist-db": "^1.1.3"
+  }
+}
