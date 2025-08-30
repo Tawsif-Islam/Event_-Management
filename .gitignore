@@ -1,18 +1,22 @@
-# Environment files
-.env
-
-# Dev-only requirements
-requirements-dev.txt
-
-# Python cache
+# Python
 __pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+.venv/
+*.sqlite3
+
+# Django
+*.log
+*.pot
 *.pyc
+media/
+staticfiles/
 
-# Virtual environments
-.venv/
-env/
-venv/
-
-.env
+# Development-only requirements
 requirements-dev.txt
-.venv/
+
+# OS
+.DS_Store
+Thumbs.db
