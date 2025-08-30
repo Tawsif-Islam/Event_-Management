@@ -1,0 +1,14 @@
+# Environment files
+.env
+
+# Dev-only requirements
+requirements-dev.txt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+env/
+venv/
