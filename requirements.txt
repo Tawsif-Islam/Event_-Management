@@ -31,3 +31,4 @@ pyparsing==3.2.3
 typing_extensions==4.15.0
 bottle==0.13.4
 bottle-websocket==0.2.9
+python-dotenv
